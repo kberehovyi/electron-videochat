@@ -5,7 +5,8 @@
   "main": "main.js",
   "scripts": {
     "start": "electron .",
-    "devStart": "nodemon server.js"
+    "devStart": "nodemon server.js",
+    "build": "electron-packager ."
   },
   "author": "",
   "license": "ISC",
