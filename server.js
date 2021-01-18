@@ -8,15 +8,15 @@
         // const { v4: uuidV4 } = require('uuid')
         const chatRoomId = 'f1f1'
 
-        // app.set('view engine', 'ejs')
-        app.use(express.static('public'))
+        app.set('view engine', 'ejs')
+        app.use(express.static(path.join(__dirname, 'public')))
 
         app.get('/', (req, res) => {
             res.redirect(`/${chatRoomId}`)
         })
 
         app.get('/:room', (req, res) => {
-            res.sendFile(path.join(__dirname, 'views', 'room.html'))
+            res.render(path.join(__dirname, 'views', 'room.ejs'))
         })
 
         io.on('connection', socket => {
